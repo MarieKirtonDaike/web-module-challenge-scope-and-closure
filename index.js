@@ -65,7 +65,7 @@ NOTE: This will be a callback function for the tasks below
 */
 
 function inning(){
-   return  Math.floor(Math.random()*2)+1
+   return  Math.floor(Math.random()* Math.floor(3))
 }
 // console.log(inning())
 
@@ -84,25 +84,23 @@ Use the finalScore function below to do the following:
 */ 
 
 function finalScore(myCallback, num){
-const final = {}
+  let homescore = 0
+  let awayscore = 0
 
-for (let i = 0 ; i < num ; i ++){
-    myCallback
-    myCallback++
-    final.Home = myCallback 
-}
-const seperatefunc =() =>{
   for (let i = 0 ; i < num ; i ++){
-    myCallback
-    myCallback++
-    final.Away = myCallback 
-  }
+
+    homescore = homescore + myCallback();
+    awayscore = awayscore + myCallback();
 }
-seperatefunc()
-return final
+return {
+  Home : homescore ,
+  Away : awayscore
+}
 }
 
-// console.log(finalScore(inning(), 9 )) 
+// console.log(finalScore(inning, 9 )) 
+
+
 // Get answers on this one have no idea what i did. 
 
 
