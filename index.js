@@ -18,7 +18,7 @@
 function processFirstItem(stringList, callback) {
   return callback(stringList[0])
 }
-console.log('example task:', processFirstItem(['foo','bar'],function(str){return str+str}));
+console.log('example task:', processFirstItem(['foo', 'bar'], function (str) { return str + str }));
 
 // ⭐️ Example Challenge END ⭐️
 
@@ -41,7 +41,7 @@ console.log('example task:', processFirstItem(['foo','bar'],function(str){return
 function counterMaker() {
   let count = 0;
   return function counter() {
-   return count++;
+    return count++;
   }
 }
 
@@ -64,10 +64,10 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(){
-   return  Math.floor(Math.random()* Math.floor(3))
+function inning() {
+  return Math.floor(Math.random() * 3)
 }
-// console.log(inning())
+//console.log(inning())
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
 Use the finalScore function below to do the following:
@@ -81,24 +81,26 @@ Use the finalScore function below to do the following:
   "Home": 11,
   "Away": 5
 }
-*/ 
+*/
 
-function finalScore(myCallback, num){
-  let homescore = 0
-  let awayscore = 0
+function finalScore(myCallback, num) {
+  const final = {}
+  final.Home = 0
+  final.Away = 0
 
-  for (let i = 0 ; i < num ; i ++){
-
-    homescore = homescore + myCallback();
-    awayscore = awayscore + myCallback();
+  for (let i = 0; i < num; i++) {
+     let score = myCallback()
+    final.Home += score
+  }
+  for (let i = 0; i < num; i++) {
+    let score = myCallback()
+        final.Away += score
+ }
+ return final
+  
 }
-return {
-  Home : homescore ,
-  Away : awayscore
-}
-}
 
-// console.log(finalScore(inning, 9 )) 
+ console.log(finalScore(inning, 9 ))
 
 
 // Get answers on this one have no idea what i did. 
@@ -120,7 +122,7 @@ For example: invoking getInningScore(inning) might return this object:
 
 function getInningScore(callback) {
   const project = finalScore(callback, 1)
-return project 
+  return project
 }
 
 //I have no idea what im doing!!!
@@ -173,7 +175,7 @@ function scoreboard(/* CODE HERE */) {
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
-function foo(){
+function foo() {
   console.log('its working');
   return 'bar';
 }
