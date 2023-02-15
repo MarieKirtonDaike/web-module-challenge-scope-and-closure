@@ -64,10 +64,10 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+function inning(){
+   return  Math.floor(Math.random()*2)+1
 }
-
+// console.log(inning())
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
 Use the finalScore function below to do the following:
@@ -83,9 +83,28 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*Code Here*/){
-  /*Code Here*/
+function finalScore(myCallback, num){
+const final = {}
+
+for (let i = 0 ; i < num ; i ++){
+    myCallback
+    myCallback++
+    final.Home = myCallback 
 }
+const seperatefunc =() =>{
+  for (let i = 0 ; i < num ; i ++){
+    myCallback
+    myCallback++
+    final.Away = myCallback 
+  }
+}
+seperatefunc()
+return final
+}
+
+// console.log(finalScore(inning(), 9 )) 
+// Get answers on this one have no idea what i did. 
+
 
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
@@ -101,11 +120,12 @@ For example: invoking getInningScore(inning) might return this object:
   */
 
 
-function getInningScore(/*Your Code Here */) {
-  /*Your Code Here */
-
+function getInningScore(callback) {
+  const project = finalScore(callback, 1)
+return project 
 }
 
+//I have no idea what im doing!!!
 
 /* STRETCH: ⚾️⚾️⚾️ Task 5: scoreboard() ⚾️⚾️⚾️
 Use the scoreboard function below to do the following:
